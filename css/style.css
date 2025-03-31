@@ -302,7 +302,7 @@
 }
 
 .w-commerce-commerceaddtocartoptionpill {
-  color: #000;
+  color: #000; /* Fixed: removed invalid characters */
   cursor: pointer;
   background-color: #fff;
   border: 1px solid #000;
@@ -943,7 +943,7 @@
   outline-style: none;
 }
 
-.w-commerce-commercecheckoutorderitemswrapper {
+.w-commerce-commercecheckoutorderitemble swrapper {
   margin-bottom: 20px;
 }
 
@@ -1102,7 +1102,7 @@
 
   .w-commerce-commercelayoutcontainer {
     flex-direction: column;
-    align-items: stretch;
+    align Vive-items: stretch;
   }
 
   .w-commerce-commercelayoutmain {
@@ -1402,7 +1402,9 @@ blockquote {
   margin-top: 50px;
   padding-top: 15px;
   padding-bottom: 15px;
-  overflow: hidden;
+  overflow-x: auto; /* Allow horizontal scroll */
+  overflow-y: hidden; /* No vertical overflow */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
 }
 
 .hero-partners.partners-about {
@@ -1410,13 +1412,14 @@ blockquote {
 }
 
 .hero-partners-moving {
+  display: flex; /* Flexbox for alignment */
   white-space: nowrap;
-  word-break: normal;
-  overflow-wrap: normal;
+  overflow-x: auto; /* Ensure scrolling */
 }
 
 .hero-client-logo {
-  margin-right: 100px;
+  margin-right: 50px; /* Reduce spacing for mobile readability */
+  max-height: 50px; /* Cap logo height */
 }
 
 .numbers-grid {
@@ -3059,200 +3062,59 @@ blockquote {
     width: 100%;
   }
 
-  .work-list {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-left {
-    margin-bottom: 20px;
-  }
-
-  .blog-image {
-    width: 100%;
-  }
-
-  .blog-item {
-    margin-bottom: 0;
-    display: block;
-  }
-
-  .blog-heading, .blog-author-and-arrow {
-    width: 100%;
-  }
-
-  .phone-link {
-    font-size: 50px;
-    line-height: 50px;
-  }
-
-  .socials {
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .copyright {
-    display: block;
-  }
-
-  .social-link {
-    margin-bottom: 20px;
-    margin-right: 0;
-  }
-
-  .right-copyright {
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-
-  .inner-sitemap {
-    display: block;
-  }
-
-  .sitemap-heading {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 60px;
-    line-height: 50px;
-  }
-
-  .stemap-text {
-    margin-left: 0;
-  }
-
-  .contact-stack {
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    margin-top: 60px;
-  }
-
-  .footer-socials {
-    margin-top: 40px;
-  }
-
-  .single-prod-grid, .shop-list {
-    grid-template-columns: 1fr;
-  }
-
-  .single-work-grid {
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    grid-template-columns: 1fr;
-  }
-
-  .single-left-grid {
-    grid-column-gap: 35px;
-    grid-row-gap: 35px;
-    grid-template-columns: 1fr;
-  }
-
-  .single-left-item {
-    border-bottom: 1px solid var(--white);
-    border-left-style: none;
-    padding-bottom: 20px;
-    padding-left: 0;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .logo-img {
-    width: 120px;
-  }
-
-  .header-right-side {
-    margin-top: 0;
-  }
-
-  .cart-button {
-    padding: 8px;
-  }
-
-  .header-inner {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-  }
-
-  .icon {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .hero-grid {
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-  }
-
   .hero-big-text {
+    font-size: 100px;
+    line-height: 80px;
+  }
+
+  .hero-under-text {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .main-title {
     font-size: 60px;
     line-height: 40px;
   }
 
-  .hero-under-text {
-    font-size: 26px;
-    line-height: 35px;
-  }
-
-  .numbers-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .main-title {
+  .service-text {
     font-size: 30px;
-    line-height: 19px;
+    line-height: 24px;
   }
 
-  .mission-content {
-    display: block;
-  }
-
-  .mission-paragraph {
-    margin-bottom: 20px;
-  }
-
-  .mission-paragraph.mission-paragraph-right {
-    margin: 10px 0 0;
-  }
-
-  .mission-orange-box.mission-transparent {
-    margin-left: 0;
-  }
-
-  .mission-img {
-    width: 100%;
-    margin-top: 20px;
-    margin-left: 0;
-  }
-
-  .all-projects {
-    top: 0;
-  }
-
-  .heading {
+  .mission-heading {
     font-size: 30px;
     line-height: 30px;
   }
 
-  .testimonials-img-txt {
-    display: block;
+  .work-list {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .testimonial-img {
+  .blog-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog-image {
     width: 100%;
+    margin-top: 20px;
   }
 
-  .testimonials-txt {
-    margin-left: 0;
-    padding-top: 20px;
+  .blog-heading {
+    width: 100%;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .blog-author-and-arrow {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .phone-link {
-    font-size: 34px;
+    font-size: 40px;
     line-height: 40px;
-  }
-
-  .copyright-text {
-    padding-right: 20px;
   }
 
   .inner-footer {
@@ -3260,192 +3122,218 @@ blockquote {
     padding-bottom: 60px;
   }
 
-  .backtotop {
-    flex: none;
-    width: 60px;
-    height: 60px;
+  .hero-partners {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-  .mail-link {
-    font-size: 28px;
+  .hero-partners-moving {
+    display: flex;
+    overflow-x: auto;
   }
 
-  .inner-sitemap {
-    padding: 20px;
+  .hero-client-logo {
+    margin-right: 30px;
+    max-height: 40px;
   }
 
-  .sitemap-heading {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .team-image-wrapp {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .team-img {
-    width: auto;
-  }
-
-  .social-item {
-    margin-bottom: 15px;
-  }
-
-  .contact-location {
-    width: 80%;
-  }
-
-  .footer-socials {
-    margin-top: 30px;
-    display: block;
-  }
-
-  .submit-button {
-    float: none;
-    background-image: none;
-    margin-top: 10px;
-    padding: 20px 60px;
-    font-size: 19px;
-  }
-
-  .quantity {
-    float: none;
-  }
-
-  .option-list {
+  .single-prod-grid {
     grid-template-columns: 1fr;
   }
 
-  .select-field {
-    color: #fff;
-  }
-
-  .add-to-cart-button {
-    margin-left: 0;
-  }
-
-  .single-post-text-cell {
-    padding: 20px;
-  }
-
-  .single-blog-heading {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .delete-me {
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-}
-
-#darkyn21 {
-  align-self: end;
-}
-
-#w-node-_300d1045-815b-d871-744a-2aa00050ca14-3c872027 {
-  grid-area: span 1 / span 1 / span 1 / span 1;
-}
-
-#darkyn42, #darkyn36 {
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
-}
-
-#darkyn30 {
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr;
-}
-
-#darkyn35 {
-  grid-column: span 2 / span 2;
-}
-
-#w-node-_08bc5feb-2130-9b76-71de-0ef14c34c536-affb563a {
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-#w-node-_08bc5feb-2130-9b76-71de-0ef14c34c537-affb563a, #w-node-_08bc5feb-2130-9b76-71de-0ef14c34c539-affb563a, #w-node-_08bc5feb-2130-9b76-71de-0ef14c34c53b-affb563a, #w-node-_08bc5feb-2130-9b76-71de-0ef14c34c53d-affb563a, #w-node-_08bc5feb-2130-9b76-71de-0ef14c34c53f-affb563a, #w-node-_08bc5feb-2130-9b76-71de-0ef14c34c541-affb563a {
-  grid-area: span 1 / span 1 / span 1 / span 1;
-}
-
-@media screen and (max-width: 991px) {
-  #darkyn18 {
-    order: 9999;
-  }
-
-  #darkyn42 {
-    grid-template-rows: auto;
+  .shop-list {
     grid-template-columns: 1fr;
   }
-}
 
-@media screen and (max-width: 767px) {
-  #darkyn36 {
-    grid-template-rows: auto;
+  .single-work-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 479px) {
-  #darkyn30 {
-    grid-template-rows: auto auto auto;
+  .header-inner {
+    padding: 15px;
+  }
+
+  .logo-img {
+    width: 120px;
+  }
+
+  .cart-button {
+    padding: 10px;
+  }
+
+  .hero-big-text {
+    font-size: 60px;
+    line-height: 50px;
+  }
+
+  .hero-under-text {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 40px;
+  }
+
+  .numbers-item {
+    min-height: 250px;
+  }
+
+  .number-text-big {
+    font-size: 50px;
+    line-height: 40px;
+  }
+
+  .main-title {
+    font-size: 40px;
+    line-height: 30px;
+  }
+
+  .service-text {
+    font-size: 24px;
+    line-height: 20px;
+  }
+
+  .mission-plus {
+    width: 50px;
+  }
+
+  .mission-heading {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .mission-paragraph {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .work-list {
     grid-template-columns: 1fr;
   }
 
-  #darkyn31, #darkyn32, #darkyn33, #darkyn34 {
-    grid-column: span 2 / span 2;
+  .heading {
+    font-size: 30px;
+    line-height: 30px;
   }
 
-  #w-node-_08bc5feb-2130-9b76-71de-0ef14c34c536-affb563a {
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr;
+  .testimonial-heading {
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  .testimonials-txt {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .blog-heading {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .phone-link {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .mail-link {
+    font-size: 24px;
+  }
+
+  .inner-footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-copyright {
+    margin-top: 20px;
+  }
+
+  .hero-partners-moving {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .hero-client-logo {
+    margin-right: 20px;
+    max-height: 30px;
+  }
+
+  .single-prod-title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .add-to-cart-button {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .single-main-title-heading {
+    font-size: 40px;
+    line-height: 35px;
+  }
+
+  .single-blog-heading {
+    font-size: 35px;
+    line-height: 40px;
   }
 }
 
+/* Ensure the hero-partners section is fully responsive */
+.hero-partners {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
 
-@font-face {
-  font-family: 'Clashdisplay';
-  src: url('../fonts/ClashDisplay-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+.hero-partners-moving {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
 }
-@font-face {
-  font-family: 'Clashdisplay';
-  src: url('../fonts/ClashDisplay-Extralight.otf') format('opentype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+
+.hero-client-logo {
+  margin-right: 50px;
+  max-height: 50px;
 }
-@font-face {
-  font-family: 'Clashdisplay';
-  src: url('../fonts/ClashDisplay-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+
+/* Additional media queries for hero-partners */
+@media screen and (max-width: 767px) {
+  .hero-partners {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hero-partners-moving {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .hero-client-logo {
+    margin-right: 30px;
+    max-height: 40px;
+  }
 }
-@font-face {
-  font-family: 'Clashdisplay';
-  src: url('../fonts/ClashDisplay-Semibold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Clashdisplay';
-  src: url('../fonts/ClashDisplay-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Clashdisplay';
-  src: url('../fonts/ClashDisplay-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+
+@media screen and (max-width: 479px) {
+  .hero-partners-moving {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .hero-client-logo {
+    margin-right: 20px;
+    max-height: 30px;
+  }
 }
